@@ -47,7 +47,9 @@ de sitio con una actualización (típico con npm/nvm), todo eso deja de funciona
 - Nunca `curl | sh`: un instalador se descarga a un archivo, se revisa y se ejecuta.
 
 Aceptación: `env -i HOME=$HOME PATH=/usr/bin:/bin ~/.local/bin/<CLI> --version` funciona (o la ruta
-fija que dé el adaptador).
+fija que dé el adaptador). Si el ejecutable ya es nativo y está en una ruta fija del sistema (comprueba con
+`readlink -f "$(command -v <CLI>)"`) y funciona con entorno vacío, no hace falta lanzador: anota esa ruta
+y pasa la misma orden con ella.
 
 ## Accesos directos (siempre que haya sesión gráfica)
 

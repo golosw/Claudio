@@ -36,7 +36,7 @@ instalación del kit para Claude Code, decide en la Fase 0 con el usuario:
 | `<AJUSTES>` | `~/.config/opencode/opencode.json` (o `.jsonc`) |
 | `<AGENTES>` | `~/.config/opencode/agents/<nombre>.md` |
 | `<SKILLS>` | `~/.config/opencode/skills/<nombre>/SKILL.md` (también lee `~/.agents/skills/`) |
-| `<NO_INTERACTIVO>` | `opencode run "<encargo>"`; formato de eventos JSON sin confirmar |
+| `<NO_INTERACTIVO>` | `opencode run --format json "<encargo>"`: eventos `step_start`, `text`, `tool_use` y `step_finish` (con `cost` y `tokens`); confirmado en v2.3.2 (retorno 2026-11-22). Guarda la salida en un archivo |
 | `<SESIONES>` | sin confirmar |
 
 ## Capacidades
@@ -44,7 +44,7 @@ instalación del kit para Claude Code, decide en la Fase 0 con el usuario:
 | Capacidad | Estado | Cómo |
 |---|---|---|
 | Instrucciones globales | sí | `<INSTRUCCIONES>` |
-| Subagentes | sí | `.md` con frontmatter `description`, `mode: subagent`, `model`, `permissions` |
+| Subagentes | sí | `.md` con frontmatter `description`, `mode: subagent`, `model`, `permissions`. En v2.3.2 `permissions` es una **lista** de `{ action, resource, effect }` (p. ej. `action: subagent`, `resource: "*"`, `effect: deny`); el objeto `permission` de v1 no se aplica. Se comprueba con `opencode debug agents`, que lista cada agente con su modo, modelo y permisos resueltos. Un agente creado en la sesión en curso puede no verse: usa una sesión nueva |
 | Skills | sí | Carpeta con `SKILL.md` (`name`, `description`) |
 | Hooks que bloquean | parcial | Reglas de `permissions` en `<AJUSTES>` (`allow`/`ask`/`deny` por herramienta y patrón) o un plugin que deniega en la evaluación de permisos. Sirve para la red de seguridad de M1 si la lista se expresa como reglas `deny` |
 | Línea de estado | sin verificar | La documentación de plugins (`https://opencode.ai/docs/plugins/`) admite plugins solo de la TUI; un usuario informa de un pie de estado por «slots» de plugin en v2, pero no está verificado en la documentación. Si no se puede comprobar en la máquina, plan B |
@@ -60,5 +60,5 @@ paquetes se instalan con `pkg`. Lo que la plantilla marca para otros perfiles se
 
 ## Órdenes de verificación
 
-Las de las fases, con `<NO_INTERACTIVO>` si da salida legible; si no, verificación manual (el usuario
+Las de las fases, con `<NO_INTERACTIVO>` (en una sesión nueva, para ver agentes y skills recién creados) y `opencode debug agents` para los agentes; si no, verificación manual (el usuario
 abre `opencode`, hace la pregunta y pega la respuesta).

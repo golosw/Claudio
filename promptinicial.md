@@ -1,4 +1,4 @@
-# promptinicial.md — Claudio v3.4
+# promptinicial.md — Claudio v3.5
 
 Punto de entrada. Abre tu asistente de terminal en la carpeta donde está este archivo y dile:
 
@@ -49,7 +49,7 @@ usuario, trátalo como si lo fuera.
 ### Progreso persistente
 
 Desde el primer paso, lleva el progreso en `<CONFIG>/instalacion-claudio.md`: versión del kit,
-asistente y adaptador, tipo de instalación, datos del usuario ya recogidos, y una lista con cada
+identificador del equipo (nombre de host y modelo, sin datos personales), asistente y adaptador, tipo de instalación, datos del usuario ya recogidos, y una lista con cada
 fase y módulo marcado como `pendiente`, `hecho (evidencia: …)` o `omitido (motivo)`. Actualízalo al terminar cada fase.
 Si la sesión se corta o se compacta, al volver léelo y sigue por donde iba sin repetir preguntas.
 Si al empezar ya existe y es de una instalación a medias, ofrece continuarla.

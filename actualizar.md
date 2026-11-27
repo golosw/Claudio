@@ -15,10 +15,12 @@ Repositorio: `https://github.com/golosw/Claudio`. Solo se usan **etiquetas publi
 - Versión instalada: la de `<CONFIG>/instalacion-claudio.md` (si falta, la marca
   `<!-- prompt-inicial vX.Y` de `<INSTRUCCIONES>`).
 - Última publicada: `https://api.github.com/repos/golosw/Claudio/releases/latest` (campo `tag_name`); si
-  no hay releases, la etiqueta mayor de `…/tags`. Sin autenticación hay un límite de unas 60 consultas
+  responde 404 (no hay releases), la etiqueta mayor de `…/tags`; si responde, no consultes `/tags`. Sin autenticación hay un límite de unas 60 consultas
   por hora: con una basta.
 - Compara como versión, no como texto (`v3.10` > `v3.9`). Si no es mayor, termina diciéndolo. Anota la
   fecha de la comprobación.
+- Si el identificador de equipo de `instalacion-claudio.md` no coincide con esta máquina, el registro es de
+  otro equipo: avisa y pregunta antes de seguir (la versión instalada puede no ser la de aquí).
 - Sin red o con error de la API: dilo y termina. Nunca supongas que no hay versión nueva.
 
 ## 2. Descargar

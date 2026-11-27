@@ -1,5 +1,22 @@
 # CAMBIOS
 
+## v3.5
+
+Origen: los informes de retorno de las propuestas #3 (actualización v3.4 en Android/Termux) y #5
+(instalación v3.4 en Armbian), ambos con opencode v2. Lo aplicado es lo que consta en esos informes;
+no se ha reproducido en una máquina propia.
+
+- **Adaptador opencode** (`adaptadores/opencode.md`): `opencode run --format json` confirmado como modo no
+  interactivo (v2.3.2); `permissions` de los agentes es una lista `{ action, resource, effect }` y se
+  comprueba con `opencode debug agents`.
+- **Ejecutable estable** (`fases/06-modulos.md`): si el CLI ya es nativo y está en una ruta fija, no hace
+  falta lanzador.
+- **Perfil `terminal`** (`plantillas/instrucciones.md`): si la búsqueda integrada falla (ripgrep en
+  Android/arm64), usar `grep`/`find` de la shell.
+- **Actualizar** (`actualizar.md`): `releases/latest` solo cae a `/tags` si da 404.
+- **Identificador de equipo** (`promptinicial.md`, `fases/00-detectar.md`, `actualizar.md`): el registro de
+  instalación lleva el equipo; si no coincide con la máquina, es de otro equipo y se pregunta antes de seguir.
+
 ## v3.4
 
 Origen: la prueba de M4 desde cero (2026-11-19): salió una página con 61 líneas de CSS, sin selector

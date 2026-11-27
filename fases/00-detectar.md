@@ -35,7 +35,10 @@
    proyectos, una interfaz ya instalada (servicio de usuario que sirve una página en
    127.0.0.1 y lanza el asistente, sus lanzadores o autoarranque y su carpeta de datos) y una
    carpeta `personalidades/`. Si existe `<CONFIG>/instalacion-claudio.md`, léelo: dice qué
-   versión del kit se instaló, qué módulos y si quedó algo a medias.
+   versión del kit se instaló, qué módulos y si quedó algo a medias. Compara su identificador de equipo
+   con el de esta máquina: si no coincide, el registro es de **otro equipo** (carpeta copiada o
+   sincronizada): dilo, no lo des por válido ni lo sobrescribas, y pregunta si esta máquina es una
+   instalación nueva o el mismo equipo renombrado.
    **Carpeta de proyectos (`{{PROYECTOS}}`)**: es la carpeta raíz donde viven mis proyectos, su
    `personalidades/` y el `<INSTR_LOCAL>` local; si dentro hay una subcarpeta `projects/` o
    `proyectos/`, los proyectos van en ella. En una instalación previa **usa la que ya se
